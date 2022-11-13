@@ -1,0 +1,63 @@
+package com.company;
+
+
+public class Person {
+
+    private int id;
+    private String name;
+    private String surname;
+    private String postcode;
+    private String phoneNumber;
+
+
+    Person(int id, String name, String surname, String postcode, String phoneNumber){
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.postcode = postcode;
+        this.phoneNumber = phoneNumber;
+    }
+
+
+    public int getid() {
+        return id;
+    }
+
+    public void setid(int name) {
+        this.id = id;
+    }
+
+    public String getname() {
+        return name;
+    }
+
+    public void setname(String name) {
+        this.name = name;
+    }
+
+    public String getsurname() {
+        return surname;
+    }
+
+    public void setsurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getpostcode() {
+        return postcode;
+    }
+
+    public void setpostcode(String postcode) {this.postcode = postcode;}
+
+    public String getphoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setphoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber;}
+
+
+
+    public static String print(Person person) {
+        return " "+ person.id +  " " + person.name + " " + person.surname + " " + person.postcode + " " + person.phoneNumber ;
+    }
+}
