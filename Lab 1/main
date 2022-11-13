@@ -1,0 +1,178 @@
+package com.company;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+
+        int n = 0;
+        double[] array = new double[n];
+        Scanner sc = new Scanner(System.in);
+        int m ;
+        int ERR = 0;
+        do{
+            System.out.println("1. Создать массив\n" +
+                    "2. Удалить элемент массива\n" +
+                    "3. Добавить элемент в конец массива\n" +
+                    "4. Вывод элемента по индексу\n" +
+                    "5. Вставить эелемент в массив\n" +
+                    "6. Вывести максимальное и минимальное значения среди элементов массива\n" +
+                    "7. Вывод массива на экран \n" +
+                    "8. Найти число в массиве\n" +
+                    "9. Отсортировать массив по возрастанию\n" +
+                    "10. Выход");
+            System.out.println("Введите номер опции: ");
+
+            m = sc.nextInt();
+
+            try {
+            switch(m){
+
+                case 1:
+                    array = CASE1.doThing1(array);
+                    ERR = CASE1.PROV();
+                    break;
+
+
+                case 2:
+                    if(ERR == 0){
+                        System.out.println("Ошибка. Массив не был создан");
+                        break;
+                    }
+
+                    array = CASE1.doThing2(array,ERR);
+                    break;
+
+                case 3:
+                    if(ERR == 0){
+                        System.out.println("Ошибка. Массив не был создан");
+                        break;
+                    }
+                    array = CASE1.doThing3(array,ERR);
+
+                case 4:
+
+                    if(ERR == 0){
+                        System.out.println("Ошибка. Массив не был создан");
+                        break;
+                    }
+
+                    try {
+                        System.out.println("Введите индекс искомого элемента");
+                    int index = scan.nextInt();
+                    System.out.println("Значение элемента c индексом "+ index + " - " + array[index]);
+                    break;
+                    } catch(InputMismatchException exception){
+                        System.out.println("Введен неверный тип данных");
+                        break;
+                    }
+
+                case 5:
+
+                    if(ERR == 0){
+                        System.out.println("Ошибка. Массив не был создан");
+                        break;
+                    }
+
+                    try {
+                        System.out.println("Индекс добавляемого элемента: ");
+                    int k3 = scan.nextInt();
+                        System.out.println("Значение добавляемого элемента: ");
+                        double a = scan.nextDouble();
+                        double[] fake3 = new double[array.length+1];
+                    for (int i = 0; i < k3; i++) {
+                        fake3[i]=array[i];
+                    }
+
+
+                    fake3[k3] = a;
+                        for (int j = k3+1; j < array.length+1 ;j++){
+                            fake3[j]=array[j-1];
+                        }
+                    array = fake3;
+                    break;
+                    } catch(InputMismatchException  exception){
+                        System.out.println("Введен неверный тип данных");
+                        break;
+                    } catch(NegativeArraySizeException exception){
+                        System.out.println("Невозможная размерность массива");
+                        break;
+                    }
+
+
+                case 6:
+
+                    if(ERR == 0){
+                        System.out.println("Ошибка. Массив не был создан");
+                        break;
+                    }
+
+                    double max = array[0];
+                    for (int i = 0; i < array.length; i++) {
+                        if (max < array[i]){
+                            max = array[i];
+                        }
+                    }
+
+                    double min = array[0];
+                    for (int i = 1; i < array.length; i++) {
+                        if (min > array[i]){
+                            min = array[i];
+                        }
+                    }
+                    System.out.println("Максимальный элемент:"+ max +
+                            " Минимальный элемент: "+ min);
+
+                    break;
+
+                case 7:
+
+                    if(ERR == 0){
+                        System.out.println("Ошибка. Массив не был создан");
+                        break;
+                    }
+
+                    for (int i = 0; i < array.length; i++) {
+                        System.out.println(array[i]);
+                    }
+                    break;
+
+
+                case 8:
+                    if(ERR == 0){
+                        System.out.println("Ошибка. Массив не был создан");
+                        break;
+                    }
+                    ERR = CASE1.PROV();
+                    CASE2.doThing4(array);
+
+                    break;
+
+                case 9:
+                    if(ERR == 0){
+                        System.out.println("Ошибка. Массив не был создан");
+                        break;
+                    }
+                    CASE2.Sort(array);
+                    System.out.println("Массив отсортирован");
+
+                    break;
+
+                case 10:
+                    break;
+
+            }
+            } catch(InputMismatchException  exception){
+                System.out.println("Введен неверный тип данных");
+                break;
+            }
+
+        }while( m != 10 );
+
+        }
+
+
+}
+
