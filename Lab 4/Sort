@@ -1,0 +1,341 @@
+package com.company;
+
+import java.util.InputMismatchException;
+
+public class Sort {
+
+    public static Person[] sortIdUp(Person[] o) {
+
+            try{
+            boolean isSorted = false;
+            Person buf;
+            while(!isSorted) {
+                isSorted = true;
+                for (int i = 0; i < o.length-1; i++) {
+
+                    Person current1 = o[i];
+                    Person current2 = o[i + 1];
+
+                    if(current1.getid() > current2.getid()){
+                        isSorted = false;
+
+
+                        buf = o[i];
+                        o[i] = o[i+1];
+                        o[i+1] = buf;
+                    }
+                }
+            }
+            } catch (InputMismatchException exception) {
+                System.out.println("Введен неверный тип данных");
+
+            } catch (NegativeArraySizeException exception) {
+                System.out.println("Невозможная размерность массива");
+
+            }
+
+            return o;
+    }
+
+    public static Person[] sortNameUp(Person[] o) {
+        try{
+        boolean isSorted = false;
+        Person buf;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < o.length-1; i++) {
+
+                Person current1 = o[i];
+                Person current2 = o[i + 1];
+                String a = current1.getname();
+                String b = current2.getname();
+
+                if(a.trim().compareToIgnoreCase(b.trim())>0){
+                    isSorted = false;
+
+
+                    buf = o[i];
+                    o[i] = o[i+1];
+                    o[i+1] = buf;
+                }
+            }
+        }
+        } catch (InputMismatchException exception) {
+            System.out.println("Введен неверный тип данных");
+
+        } catch (NegativeArraySizeException exception) {
+            System.out.println("Невозможная размерность массива");
+
+        }
+        return o;
+    }
+
+    public static Person[] sortSurnameUp(Person[] o) {
+        try{
+        boolean isSorted = false;
+        Person buf;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < o.length-1; i++) {
+
+                Person current1 = o[i];
+                Person current2 = o[i + 1];
+                String a = current1.getsurname();
+                String b = current2.getsurname();
+
+                if(a.trim().compareToIgnoreCase(b.trim())>0){
+                    isSorted = false;
+
+
+                    buf = o[i];
+                    o[i] = o[i+1];
+                    o[i+1] = buf;
+                }
+            }
+        }
+        } catch (InputMismatchException exception) {
+            System.out.println("Введен неверный тип данных");
+
+        } catch (NegativeArraySizeException exception) {
+            System.out.println("Невозможная размерность массива");
+
+        }
+        return o;
+    }
+
+    public static Person[] sortPostcodeUp(Person[] o) {
+        try{
+        boolean isSorted = false;
+        Person buf;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < o.length-1; i++) {
+
+                Person current1 = o[i];
+                Person current2 = o[i + 1];
+                String a = current1.getpostcode();
+                String b = current2.getpostcode();
+
+                if(a.trim().compareToIgnoreCase(b.trim())>0){
+                    isSorted = false;
+
+
+                    buf = o[i];
+                    o[i] = o[i+1];
+                    o[i+1] = buf;
+                }
+            }
+        }
+        } catch (InputMismatchException exception) {
+            System.out.println("Введен неверный тип данных");
+
+        } catch (NegativeArraySizeException exception) {
+            System.out.println("Невозможная размерность массива");
+
+        }
+        return o;
+    }
+
+    public static Person[] sortPhonenumberUp(Person[] o) {
+        try{
+        boolean isSorted = false;
+        Person buf;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < o.length-1; i++) {
+
+                Person current1 = o[i];
+                Person current2 = o[i + 1];
+                String a = current1.getphoneNumber();
+                String b = current2.getphoneNumber();
+
+                if(a.trim().compareToIgnoreCase(b.trim())>0){
+                    isSorted = false;
+
+
+                    buf = o[i];
+                    o[i] = o[i+1];
+                    o[i+1] = buf;
+                }
+            }
+        }
+        } catch (InputMismatchException exception) {
+            System.out.println("Введен неверный тип данных");
+
+        } catch (NegativeArraySizeException exception) {
+            System.out.println("Невозможная размерность массива");
+
+        }
+        return o;
+    }
+
+    public static Person[] sortIdDown(Person[] o) {
+
+        try{
+        boolean isSorted = false;
+        Person buf;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < o.length-1; i++) {
+
+                Person current1 = o[i];
+                Person current2 = o[i + 1];
+
+                if(current1.getid() < current2.getid()){
+                    isSorted = false;
+
+
+                    buf = o[i];
+                    o[i] = o[i+1];
+                    o[i+1] = buf;
+                }
+            }
+        }
+        } catch (InputMismatchException exception) {
+            System.out.println("Введен неверный тип данных");
+
+        } catch (NegativeArraySizeException exception) {
+            System.out.println("Невозможная размерность массива");
+
+        }
+
+        return o;
+    }
+
+    public static Person[] sortNameDown(Person[] o) {
+
+        try{
+        boolean isSorted = false;
+        Person buf;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < o.length-1; i++) {
+
+                Person current1 = o[i];
+                Person current2 = o[i + 1];
+                String a = current1.getname();
+                String b = current2.getname();
+
+                if(a.trim().compareToIgnoreCase(b.trim())<0){
+                    isSorted = false;
+
+
+                    buf = o[i];
+                    o[i] = o[i+1];
+                    o[i+1] = buf;
+                }
+            }
+        }
+        } catch (InputMismatchException exception) {
+            System.out.println("Введен неверный тип данных");
+
+        } catch (NegativeArraySizeException exception) {
+            System.out.println("Невозможная размерность массива");
+
+        }
+
+        return o;
+    }
+
+    public static Person[] sortSurnameDown(Person[] o) {
+        try{
+        boolean isSorted = false;
+        Person buf;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < o.length-1; i++) {
+
+                Person current1 = o[i];
+                Person current2 = o[i + 1];
+                String a = current1.getsurname();
+                String b = current2.getsurname();
+
+                if(a.trim().compareToIgnoreCase(b.trim())<0){
+                    isSorted = false;
+
+
+                    buf = o[i];
+                    o[i] = o[i+1];
+                    o[i+1] = buf;
+                }
+            }
+        }
+        } catch (InputMismatchException exception) {
+        System.out.println("Введен неверный тип данных");
+
+        } catch (NegativeArraySizeException exception) {
+        System.out.println("Невозможная размерность массива");
+
+    }
+        return o;
+    }
+
+    public static Person[] sortPostcodeDown(Person[] o) {
+        try{
+        boolean isSorted = false;
+        Person buf;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < o.length-1; i++) {
+
+                Person current1 = o[i];
+                Person current2 = o[i + 1];
+                String a = current1.getpostcode();
+                String b = current2.getpostcode();
+
+                if(a.trim().compareToIgnoreCase(b.trim())<0){
+                    isSorted = false;
+
+
+                    buf = o[i];
+                    o[i] = o[i+1];
+                    o[i+1] = buf;
+                }
+            }
+        }
+        } catch (InputMismatchException exception) {
+            System.out.println("Введен неверный тип данных");
+
+        } catch (NegativeArraySizeException exception) {
+            System.out.println("Невозможная размерность массива");
+
+        }
+        return o;
+    }
+
+    public static Person[] sortPhonenumberDown(Person[] o) {
+        try{
+        boolean isSorted = false;
+        Person buf;
+        while(!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < o.length-1; i++) {
+
+                Person current1 = o[i];
+                Person current2 = o[i + 1];
+                String a = current1.getphoneNumber();
+                String b = current2.getphoneNumber();
+
+                if(a.trim().compareToIgnoreCase(b.trim())<0){
+                    isSorted = false;
+
+
+                    buf = o[i];
+                    o[i] = o[i+1];
+                    o[i+1] = buf;
+                }
+            }
+        }
+        } catch (InputMismatchException exception) {
+            System.out.println("Введен неверный тип данных");
+
+        } catch (NegativeArraySizeException exception) {
+            System.out.println("Невозможная размерность массива");
+
+        }
+        return o;
+    }
+
+
+}
+
