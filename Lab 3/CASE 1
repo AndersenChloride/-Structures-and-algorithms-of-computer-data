@@ -1,0 +1,144 @@
+package com.company;
+
+import java.util.InputMismatchException;
+import java.util.Random;
+import java.util.Scanner;
+
+public class CASE1 {
+
+    public static double[] doThing1(double[] origin){
+        try {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Введите размер массива: ");
+            int n = scan.nextInt();
+            origin = new double[n]; //создать массив
+
+            Random r = new Random();
+            System.out.println("Введите диапазон случайных чисел. Снизу: ");
+            Double low = scan.nextDouble();
+            System.out.println("Сверху: ");
+            Double high = scan.nextDouble();
+
+            for (int i = 0; i < origin.length; i++) {
+                double result = r.nextDouble(high-low) + low;
+                origin[i]= (result);
+            }
+
+
+
+        } catch(InputMismatchException exception){
+            System.out.println("Введен неверный тип данных");
+
+
+        } catch(NegativeArraySizeException exception){
+            System.out.println("Невозможная размерность массива");
+
+        }
+        return(origin);
+    }
+
+    public static int PROV(){
+        int ERR = 1;
+        return ERR;
+    }
+
+    public static int SOR(){
+        int SOR = 1;
+        return SOR;
+    }
+
+    public static double[] SortBubble(double[] origin) {
+        double[] array = new double[0];
+        try {
+            array = new double[origin.length];
+            for (int j = 0; j < origin.length; j++) {
+                array[j] = origin[j];
+            }
+            long start = System.currentTimeMillis();
+            boolean sorted = false;
+            double NUM;
+            while (!sorted) {
+                sorted = true;
+                for (int i = 0; i < array.length - 1; i++) {
+                    if (array[i] > array[i + 1]) {
+                        NUM = array[i];
+                        array[i] = array[i + 1];
+                        array[i + 1] = NUM;
+                        sorted = false;
+                    }
+                }
+            }
+            long finish = System.currentTimeMillis();
+            long elapsed = finish - start;
+            System.out.println("Прошло времени, мс (пузырь) : " + elapsed);
+
+
+        } catch (InputMismatchException exception) {
+            System.out.println("Введен неверный тип данных");
+
+        } catch (NegativeArraySizeException exception) {
+            System.out.println("Невозможная размерность массива");
+
+        }
+        return (array);
+    }
+
+    public static double[] SortIN(double[] origin) {
+
+        double[] array = new double[0];
+        try {
+            array = new double[origin.length];
+            for (int j = 0; j < origin.length; j++) {
+                array[j] = origin[j];
+            }
+            for (int j = 0; j < origin.length; j++) {
+                array[j] = origin[j];
+            }
+
+            long start = System.currentTimeMillis();
+            for (int i = 1; i < array.length; i++) {
+                double p = array[i];
+                int j = i - 1;
+                while (j >= 0 && p < array[j]) {
+                    array[j + 1] = array[j];
+                    j--;
+                }
+
+                array[j + 1] = p;
+            }
+            long finish = System.currentTimeMillis();
+            long elapsed = finish - start;
+            System.out.println("Прошло времени, мс (вставка) : " + elapsed);
+
+        } catch (InputMismatchException exception) {
+            System.out.println("Введен неверный тип данных");
+
+        } catch (NegativeArraySizeException exception) {
+            System.out.println("Невозможная размерность массива");
+
+        }
+        return (array);
+    }
+
+
+        public static double[] Duplicate(double[] array, int n){
+            int J = 0;
+            for (int i=0; i < n-1; i++){
+            if (array[i] != array[i+1]){
+                J++;
+            }
+            }
+            double[] fake = new double[J];
+            int j = 0;
+            for (int i=0; i < n-1; i++){
+                if (array[i] != array[i+1]){
+                    fake[j++] = array[i];
+                }
+            }
+            array = fake;
+            return array;
+        }
+
+
+
+}
