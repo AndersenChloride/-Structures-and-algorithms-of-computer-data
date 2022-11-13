@@ -1,0 +1,53 @@
+package com.company;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class CASE2 extends CASE1{
+
+    public static void doThing4(double[] array){
+        try {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Введите искомое число: ");
+            double q = scan.nextInt();
+            int ch = 0;
+            for (int i = 0; i<array.length; i++) {
+                if (array[i] == q){
+                    System.out.println("Введенное значение присутствует в массиве с индексом " + i);
+                    ch++;
+                }
+            }
+                if (ch == 0) {
+                    System.out.println("Введенное значение отсутствует в массиве");
+                }
+
+
+        } catch(InputMismatchException exception){
+            System.out.println("Введен неверный тип данных");
+
+
+        } catch(NegativeArraySizeException exception){
+            System.out.println("Невозможная размерность массива");
+
+        }
+
+    }
+
+    public static void Sort(double[] array) {
+        boolean sorted = false;
+        double NUM;
+        while(!sorted) {
+            sorted = true;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] > array[i+1]) {
+                    NUM = array[i];
+                    array[i] = array[i+1];
+                    array[i+1] = NUM;
+                    sorted = false;
+                }
+            }
+        }
+    }
+
+
+}
