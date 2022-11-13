@@ -1,0 +1,102 @@
+package com.company;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+
+        int n = 0;
+        double[] origin = new double[n];
+        double[] array = new double[n];
+        Scanner sc = new Scanner(System.in);
+        int m ;
+        int ERR = 0;
+        int SOR = 0;
+        int o = 0;
+        do{
+            System.out.println("\n1. Создать массив\n" +
+                    "2. Сортировка пузырьком\n" +
+                    "3. Сортировка вставками\n" +
+                    "4. Вывести массив\n" +
+                    "5. Удалить дубликаты\n" +
+                    "6. Выход");
+            System.out.println("Введите номер опции: ");
+
+            m = sc.nextInt();
+
+            try {
+                switch(m){
+
+                    case 1:
+
+                        origin = CASE1.doThing1(origin);
+                        ERR = CASE1.PROV();
+                        break;
+
+                    case 2:
+                        if(ERR == 0){
+                            System.out.println("Ошибка. Массив не был создан");
+                            break;
+                        }
+                        array = CASE1.SortBubble(origin);
+                        System.out.println("Массив отсортирован");
+                        SOR = CASE1.SOR();
+                        o = 1;
+                        break;
+
+                    case 3:
+
+                        if(ERR == 0){
+                            System.out.println("Ошибка. Массив не был создан");
+                            break;
+                        }
+                        array = CASE1.SortIN(origin);
+                        System.out.println("Массив отсортирован");
+                        SOR = CASE1.SOR();
+                        o = 1;
+                        break;
+
+
+                    case 4:
+                        if(ERR == 0){
+                            System.out.println("Ошибка. Массив не был создан");
+                            break;
+                        }
+
+                        if(o == 0){
+                            for(int i = 0; i < origin.length; i++){
+                            System.out.print(origin[i]+" ");
+                            }
+                        }else{
+                            for(int i = 0; i < array.length; i++){
+                                System.out.print(array[i]+" ");
+                        }
+                        }
+
+
+                        break;
+
+                    case 5:
+                        if(SOR == 0){
+                            System.out.println("Ошибка. Массив не отсортирован");
+                            break;
+                        }
+                        CASE1.Duplicate(array, array.length);
+                        System.out.println("Дупликаты удалены");
+                        break;
+
+                    case 6:
+                        break;
+
+                }
+            } catch(InputMismatchException  exception){
+                System.out.println("Введен неверный тип данных");
+                break;
+            }
+
+        }while( m != 6 );
+
+    }
+
+
+}
