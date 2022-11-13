@@ -1,0 +1,130 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Person person1 = new Person(3, "Vova", "Posryadchikov", "665721", "89874728893");
+        Person person2 = new Person(1, "Dasha", "Myasnikova", "663441", "89836137139");
+        Person person3 = new Person(2, "Alina", "Kungurova", "665671", "89736849051");
+        Person person4 = new Person(4, "Vadim", "Anosov", "665111", "89837469352");
+
+        Person[] people = new Person[4];
+        people[0] = person1;
+        people[1] = person2;
+        people[2] = person3;
+        people[3] = person4;
+
+
+        Scanner sc = new Scanner(System.in);
+        int e;
+        do {
+            System.out.println("""
+                    
+                    1. Отсортировать объекты по id
+                    2. Отсортировать объекты по имени
+                    3. Отсортировать объекты по фамилии
+                    4. Отсортировать объекты по индексу
+                    5. Отсортировать объекты по номеру телефона
+                    6. Вывести атрибуты одного из объектов
+                    7. Вывести атрибуты всех объектов""\");
+                    8. Выход""");
+            System.out.println("Введите номер опции: ");
+
+            int number = sc.nextInt();
+            e = 0;
+
+            switch (number) {
+                case (1):
+                    System.out.println("""
+                            1. По возрастанию
+                            2. По убыванию
+                            """);
+                    int a = sc.nextInt();
+                    if (a == 1) {
+                        Sort.sortIdUp(people);
+                    } else {
+                        Sort.sortIdDown(people);
+                    }
+                    break;
+                case (2):
+                    System.out.println("""
+                            1. По возрастанию
+                            2. По убыванию
+                            """);
+                    int b = sc.nextInt();
+                    if (b == 1) {
+                        Sort.sortNameUp(people);
+                    } else {
+                        Sort.sortNameDown(people);
+                    }
+
+                    break;
+
+                case (3):
+                    System.out.println("""
+                            1. По возрастанию
+                            2. По убыванию
+                            """);
+                    int c = sc.nextInt();
+                    if (c == 1) {
+                        Sort.sortSurnameUp(people);
+                    } else {
+                        Sort.sortSurnameDown(people);
+                    }
+                    break;
+
+                case (4):
+                    System.out.println("""
+                            1. По возрастанию
+                            2. По убыванию
+                            """);
+                    int d = sc.nextInt();
+                    if (d == 1) {
+                        Sort.sortPostcodeUp(people);
+                    } else {
+                        Sort.sortPostcodeDown(people);
+                    }
+
+                    break;
+
+                case (5):
+                    System.out.println("""
+                            1. По возрастанию
+                            2. По убыванию
+                            """);
+                    int f = sc.nextInt();
+                    if (f == 1) {
+                        Sort.sortPhonenumberUp(people);
+                    } else {
+                        Sort.sortPhonenumberDown(people);
+                    }
+
+                    break;
+
+                case (6):
+                    System.out.println("Введите индекс искомого объекта в массиве: ");
+                    int g = sc.nextInt();
+                    System.out.println(Person.print(people[g]));
+                    break;
+
+                case (7):
+                    System.out.println(Person.print(people[0]));
+                    System.out.println(Person.print(people[1]));
+                    System.out.println(Person.print(people[2]));
+                    System.out.println(Person.print(people[3]));
+                    break;
+
+                case (8):
+                    e = 1;
+                    break;
+            }
+        } while (e == 0);
+    }
+}
+
+
+
+
+
