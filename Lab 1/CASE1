@@ -1,0 +1,90 @@
+package com.company;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class CASE1 {
+
+
+        public static double[] doThing1(double[] array){
+            try {
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Введите размер массива: ");
+                int n = scan.nextInt();
+                array = new double[n]; //создать массив
+                Double a;
+                for (int i = 0; i < array.length; i++) {
+                    System.out.println("Введите элемент "+ i +": ");
+                    a = scan.nextDouble();
+                    array[i]= a;
+                }
+
+
+            } catch(InputMismatchException exception){
+                System.out.println("Введен неверный тип данных");
+
+
+            } catch(NegativeArraySizeException exception){
+                System.out.println("Невозможная размерность массива");
+
+            }
+            return(array);
+        }
+
+    public static int PROV(){
+        int ERR = 1;
+        return ERR;
+    }
+
+    public static double[] doThing2(double[] array, int ERR){
+
+
+        try {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Введите индекс удаляемого элемента: ");
+            int k1 = scan.nextInt();//удаляемый элемент
+            double[] fake1 = new double[array.length-1];
+            for (int i = 0; i < k1; i++) {
+                fake1[i]=array[i];
+            }
+            for (int i = k1; i < fake1.length  ;i++){
+                fake1[i]=array[i+1];
+            }
+            array = fake1;
+
+        } catch(InputMismatchException exception){
+            System.out.println("Введен неверный тип данных");
+
+        } catch(NegativeArraySizeException exception){
+            System.out.println("Невозможная размерность массива");
+
+        } catch(ArrayIndexOutOfBoundsException exception) {
+            System.out.println("Выход за пределы массива");
+
+        }
+        return array;
+    }
+
+    public static double[] doThing3(double[] array, int ERR){
+
+        try {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Введите значение добавляемого элемента: ");
+            double k2 = scan.nextInt();//добавляемый элемент
+            double[] fake2 = new double[array.length+1];
+            for (int i = 0; i < array.length; i++) {
+                fake2[i]=array[i];
+            }
+            fake2[array.length] = k2;
+            array = fake2;
+        } catch(InputMismatchException  exception){
+            System.out.println("Введен неверный тип данных");
+        } catch(NegativeArraySizeException exception){
+            System.out.println("Невозможная размерность массива");
+
+        }
+        return array;
+    }
+
+    }
+
